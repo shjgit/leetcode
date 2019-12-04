@@ -1,0 +1,27 @@
+class Solution {
+    //删除排序数组中重复项
+    public int removeDuplicates(int[] nums) {
+        //判断数组是否为空
+        if(nums == null)
+        {
+            return 0;
+        }
+        //判断数组大小是否为0
+        if(nums.length == 0) 
+        {
+            return 0;
+        }
+        //temp用来存放遍历到的最大值
+        int temp = nums[0];
+        //length表示不重复项长度，默认为1
+        int length = 1;
+        for(int i = 1; i < nums.length; i++) {
+            if(temp != nums[i]) {
+                nums[length++] = nums[i];
+                temp = nums[i];
+            }
+        }
+        return length;
+    }
+    
+}
